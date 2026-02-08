@@ -1,0 +1,62 @@
+{
+  "units": "mm",
+  "origin": "world",
+
+  "stock": {
+    "type": "cylinder",
+    "params": {
+      "dia": 50.0,
+      "h": 80.0
+    }
+  },
+
+  "csys_list": [
+    {
+      "name": "WCS",
+      "role": "world",
+      "origin": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "rpy_deg": {
+        "r": 0.0,
+        "p": 0.0,
+        "y": 0.0
+      }
+    }
+  ],
+
+  "features": [
+    {
+      "feature_type": "turn_od_profile",
+      "id": "L3_F1_TURN_OD_PROFILE",
+      "metadata": {
+        "source": {
+          "primary_standard": "ISO 10303-238",
+          "reference_standards": [
+            "ISO 14649-12",
+            "ISO 10303-224"
+          ]
+        }
+      },
+      "params": {
+        "csys_id": "WCS",
+        "profile": [
+          { "z": 0.0,  "radius": 25.0 },
+          { "z": 20.0, "radius": 25.0 },
+          { "z": 20.0, "radius": 20.0 },
+          { "z": 40.0, "radius": 20.0 },
+          { "z": 40.0, "radius": 15.0 },
+          { "z": 80.0, "radius": 15.0 }
+        ]
+      }
+    }
+  ],
+
+  "output_mode": "stl",
+  "file_template_solid": "case3_{step:02d}_{name}_solid.stl",
+  "file_template_removed": "case3_{step:02d}_{name}_removed.stl",
+  "dry_run": false,
+  "pitch_mm": 0.5
+}
